@@ -1,0 +1,23 @@
+.country__card {
+  color: #243d25;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.country__card img {
+  width: 100%;
+  max-height: 25%;
+  height: 10rem;
+  border-radius: 8px 8px 0 0;
+}
+.country__card h2 {
+  font-size: 1.5rem;
+}
+.country__card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.country__card p {
+  font-size: 1rem;
+  font-weight: 600;
+}

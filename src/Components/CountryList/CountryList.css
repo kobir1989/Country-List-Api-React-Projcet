@@ -1,0 +1,10 @@
+.body__container {
+  width: 100%;
+  background-color: #eef7ec8a;
+  display: grid;
+  grid-template-columns: repeat(4, 15%);
+  gap: 6rem;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5%;
+}
