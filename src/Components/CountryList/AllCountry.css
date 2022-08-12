@@ -21,3 +21,17 @@
   font-size: 1rem;
   font-weight: 600;
 }
+.btn {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #146356;
+  color: #fff;
+  width: 8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+.btn:hover {
+  background-color: #4f7e77;
+}

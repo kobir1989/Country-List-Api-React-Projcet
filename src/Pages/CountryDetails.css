@@ -1,6 +1,6 @@
 .details__container {
   width: 100%;
-  margin-top: 5%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,10 +13,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding: 2rem;
+  padding: 4rem;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   background-color: #eaeef062;
+  margin: 4rem 0;
 }
 .page__img {
   display: flex;
