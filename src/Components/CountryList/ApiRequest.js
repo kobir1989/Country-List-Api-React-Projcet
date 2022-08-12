@@ -12,6 +12,7 @@ const ApiRequest = () => {
 
   const getRequest = async () => {
     setIsLoading(true);
+    setIsError(null);
     try {
       const response = await fetch('https://restcountries.com/v3.1/all');
       if (!response.ok) {

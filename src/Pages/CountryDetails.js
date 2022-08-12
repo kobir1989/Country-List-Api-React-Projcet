@@ -11,6 +11,7 @@ const CountryDetails = () => {
   const [countryData, setCountryData] = useState([]);
   const getDataRequest = async () => {
     setIsLoading(true);
+    setIsError(null);
     try {
       const response = await fetch(`https://restcountries.com/v3.1/name/${id}`);
       if (!response.ok) {
@@ -46,7 +47,7 @@ const CountryDetails = () => {
   useEffect(() => {
     getDataRequest();
   }, []);
-
+  console.log(countryData);
   return (
     <div className='details__container'>
       {isLoading && !isError && <div className='spinar'></div>}
