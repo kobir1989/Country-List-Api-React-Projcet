@@ -5,32 +5,44 @@ import './ApiRequest.css';
 const ApiRequest = () => {
   const [countries, setCountries] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [keyWord, setKeyWord] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('All');
 
   const getRequest = async () => {
-    const response = await fetch('https://restcountries.com/v3.1/all');
-    console.log(response.status);
-    const data = await response.json();
-    setIsLoading(!isLoading);
-    const recevedData = data.map((item) => {
-      return {
-        id: item.name.common,
-        flag: item.flags.png,
-        name: item.name.common,
-        capital: item.capital,
-        region: item.region,
-        population: item.population,
-        area: item.area,
-      };
-    });
-    setCountries(recevedData);
-    setFilteredData(recevedData);
-  };
+    setIsLoading(true);
+    try {
+      const response = await fetch('https://restcountries.com/v3.1/all');
+      if (!response.ok) {
+        throw new Error(isError);
+      }
+      const data = await response.json();
+      const recevedData = data.map((item) => {
+        return {
+          id: item.name.common,
+          flag: item.flags.png,
+          name: item.name.common,
+          capital: item.capital,
+          region: item.region,
+          population: item.population,
+          area: item.area,
+        };
+      });
 
-  // // //Filter Search
+      setCountries(recevedData);
+      setFilteredData(recevedData);
+    } catch (error) {
+      setIsError(error);
+    }
+    setIsLoading(false);
+  };
+  useEffect(() => {
+    getRequest();
+  }, []);
+
+  // //Filter Search
+
   const handleChange = (event) => {
     setKeyWord(event.target.value);
     const filterSearch = countries.filter((country) => {
@@ -40,6 +52,7 @@ const ApiRequest = () => {
   };
 
   //Filter Region
+
   const selectRegionHandler = (event) => {
     setSelectedRegion(event.target.value);
   };
@@ -48,9 +61,6 @@ const ApiRequest = () => {
       ? country.region.includes(country.region)
       : country.region.includes(selectedRegion);
   });
-  useEffect(() => {
-    getRequest();
-  }, []);
 
   return (
     <>
@@ -59,7 +69,14 @@ const ApiRequest = () => {
         onSelectedFilter={selectRegionHandler}
         selectded={selectedRegion}
       />
-      {isLoading && <div className='spinar'></div>}
+      {isLoading && !isError && <div className='spinar'></div>}
+
+      {isError && (
+        <div className='error-message'>
+          <p>Status 404 Something went Wrong, Please try again!</p>
+        </div>
+      )}
+
       <CountryList country={filterSelected} />
     </>
   );
