@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import CountryList from './CountryList';
 import NavBar from '../NavBar/NavBar';
+import './ApiRequest.css';
 const ApiRequest = () => {
   const [countries, setCountries] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   const [keyWord, setKeyWord] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('All');
 
   const getRequest = async () => {
     const response = await fetch('https://restcountries.com/v3.1/all');
+    console.log(response.status);
     const data = await response.json();
+    setIsLoading(!isLoading);
     const recevedData = data.map((item) => {
       return {
         id: item.name.common,
@@ -54,6 +59,7 @@ const ApiRequest = () => {
         onSelectedFilter={selectRegionHandler}
         selectded={selectedRegion}
       />
+      {isLoading && <div className='spinar'></div>}
       <CountryList country={filterSelected} />
     </>
   );
