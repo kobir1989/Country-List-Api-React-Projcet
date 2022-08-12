@@ -6,8 +6,9 @@
   gap: 6rem;
   align-items: center;
   justify-content: center;
-  padding-top: 5%;
+  padding: 5% 0;
 }
+
 @media screen and (max-width: 1440px) {
   .body__container {
     display: grid;
