@@ -8,3 +8,34 @@
   justify-content: center;
   padding-top: 5%;
 }
+@media screen and (max-width: 1440px) {
+  .body__container {
+    display: grid;
+    grid-template-columns: repeat(3, 25%);
+    gap: 6rem;
+    padding: 10% 0;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .body__container {
+    display: grid;
+    grid-template-columns: repeat(3, 27%);
+    gap: 6rem;
+    padding: 10% 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .body__container {
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    gap: 6rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .body__container {
+    display: grid;
+    grid-template-columns: 80%;
+    row-gap: 6rem;
+    padding: 15% 0;
+  }
+}

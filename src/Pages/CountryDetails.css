@@ -1,6 +1,5 @@
 .details__container {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,4 +74,22 @@
   width: 0.6rem;
   height: 0.6rem;
   margin: 0 0.3rem;
+}
+@media screen and (max-width: 1024px) {
+  .details__container {
+    width: 100%;
+    align-items: center;
+  }
+  .details__page {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem;
+  }
+  .page__text {
+    width: 100%;
+    text-align: center;
+  }
 }

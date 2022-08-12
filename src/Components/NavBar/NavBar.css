@@ -48,3 +48,16 @@ form input {
   outline: none;
   cursor: pointer;
 }
+@media screen and (max-width: 700px) {
+  .globe-__icon {
+    display: none;
+  }
+  .nav__Logo {
+    display: none;
+  }
+
+  .search {
+    gap: 0.5rem;
+    width: 50%;
+  }
+}
