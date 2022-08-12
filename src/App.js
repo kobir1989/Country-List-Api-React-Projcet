@@ -7,8 +7,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Navigate to='/home' repalce />} />
-        <Route path='/home' element={<HomePage />} />
+        <Route path='/' element={<HomePage />} />
         <Route path='/country-details' element={<CountryDetails />}>
           <Route path=':id' element={<CountryDetails />} />
         </Route>
