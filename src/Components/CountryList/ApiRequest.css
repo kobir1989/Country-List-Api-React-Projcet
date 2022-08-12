@@ -1,12 +1,12 @@
 .spinar {
-  border: 0.5rem solid rgb(25, 11, 158);
+  border: 0.5rem solid rgb(151, 184, 171);
   border-radius: 50%;
-  border-top: 0.5rem solid #b5ccf0;
-  border-bottom: 0.5rem solid #b5ccf0;
+  border-top: 0.5rem solid #044d28;
+  border-bottom: 0.5rem solid #044d28;
   width: 2rem;
   height: 2rem;
-  animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
   position: absolute;
   top: 50%;
   left: 50%;

@@ -1,7 +1,7 @@
 import './App.css';
 import HomePage from './Pages/HomePage';
 import CountryDetails from './Pages/CountryDetails';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import React from 'react';
 function App() {
   return (
